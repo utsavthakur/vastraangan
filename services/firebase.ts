@@ -11,7 +11,22 @@ const firebaseConfig = {
     appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-const app = initializeApp(firebaseConfig);
-console.log('Firebase Config loaded. API Key exists:', !!firebaseConfig.apiKey, typeof firebaseConfig.apiKey);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+// Safe initialization for Firebase to prevent white-screen crashes if keys are missing
+let app;
+let auth: any = null;
+let db: any = null;
+
+try {
+  if (firebaseConfig.apiKey && firebaseConfig.apiKey !== 'undefined') {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+    console.log('Firebase initialized successfully.');
+  } else {
+    console.warn('Firebase API Key missing. Auth and Database features are disabled.');
+  }
+} catch (error) {
+  console.error('Firebase initialization failed:', error);
+}
+
+export { auth, db };
