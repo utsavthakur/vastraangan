@@ -1,13 +1,18 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || ''; // In production, this would be strictly env variable.
-// Note: In a real client-side app, you might proxy this through a backend to protect the key, 
-// or use a user-provided key for demo purposes as requested in the system instructions.
-// For this demo, we assume the environment variable is injected.
+// Use a safer way to access the API key that works in both dev and production
+const getApiKey = () => {
+  try {
+    return process.env.API_KEY || process.env.GEMINI_API_KEY || '';
+  } catch {
+    return '';
+  }
+};
 
+const apiKey = getApiKey();
 let ai: GoogleGenAI | null = null;
 
-if (apiKey) {
+if (apiKey && apiKey !== 'undefined') {
     ai = new GoogleGenAI({ apiKey });
 }
 
