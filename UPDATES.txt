@@ -1,0 +1,28 @@
+npmUPDATES
+=======
+
+Recent Changes:
+- Enhanced "Queen of Silks" section (CinematicSpotlight.tsx):
+  - Increased video background brightness.
+  - Improved image blending (removed border, added mix-blend-lighten).
+
+Previous Updates:
+- Modified Files:
+  - constants.ts
+  - package-lock.json
+- New Assets:
+  - public/assets/textures/ (various new texture files)
+
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+Open Hostinger: Go to the File Manager for your domain vastraangan.in.
+Open public_html: Double-click to go inside the public_html folder.
+Upload: Drag and drop the 
+site_upload.zip
+ file into that folder.
+Extract: Right-click 
+site_upload.zip
+ -> Extract. (Make sure files extract securely here, not inside another folder).
+Done! Go to vastraangan.in to see your site.

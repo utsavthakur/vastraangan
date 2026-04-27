@@ -1,0 +1,8 @@
+{
+  "name": "VastraAngan",
+  "description": "India's National Custom Tailoring & Heritage Apparel Platform. A trust-driven, logistics-integrated, multi-sided commerce platform connecting customers with authentic regional tailors.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
